@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ureka.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Ureka.</h1>
+        <form action="/search" method="get">
+            <input type="text" name="query" placeholder="Search movies, series, anime..." autocomplete="off">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <p>Prakhar Solanki Production | Follow me on Instagram: prakhar.5898</p>
+    </footer>
+</body>
+</html>

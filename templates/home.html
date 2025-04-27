@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="section">
+    <h2>Latest Movies</h2>
+    <div class="card-container">
+        {% for movie in movies %}
+        <a href="/watch/movie/{{ movie.id }}" class="card">
+            <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" alt="{{ movie.title }}">
+            <p>{{ movie.title }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="section">
+    <h2>Latest Series</h2>
+    <div class="card-container">
+        {% for show in tv %}
+        <a href="/watch/tv/{{ show.id }}" class="card">
+            <img src="https://image.tmdb.org/t/p/w500{{ show.poster_path }}" alt="{{ show.name }}">
+            <p>{{ show.name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="section">
+    <h2>Latest Anime</h2>
+    <div class="card-container">
+        {% for anime in anime %}
+        <a href="/watch/tv/{{ anime.id }}" class="card">
+            <img src="https://image.tmdb.org/t/p/w500{{ anime.poster_path }}" alt="{{ anime.name }}">
+            <p>{{ anime.name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
